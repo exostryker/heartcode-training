@@ -26,10 +26,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation"; // For navigation
 
 // Define the insertOneUser function
-async function insertOneUser(name: string, isDrugDealer: boolean) {
-  // Simulate a call to save user data
-  console.log(`User ${name} is ${isDrugDealer ? "" : "not "}a drug dealer.`);
-}
 
 // Form schema validation using Zod
 const formSchema = z.object({
@@ -56,6 +52,11 @@ export default function Quiz() {
   const [step, setStep] = useState(0); // Track current question step
   const [isSubmitted, setIsSubmitted] = useState(false); // Track if form is submitted
   const router = useRouter(); // For navigation
+
+  async function insertOneUser(name: string, isDrugDealer: boolean) {
+    // Simulate a call to save user data
+    console.log(`User ${name} is ${isDrugDealer ? "" : "not "}a drug dealer.`);
+  }
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
