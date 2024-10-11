@@ -26,7 +26,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation"; // For navigation
 
 // Define the insertOneUser function
-async function insertOneUser(name, isDrugDealer) {
+async function insertOneUser(name: string, isDrugDealer: boolean) {
   // Simulate a call to save user data
   console.log(`User ${name} is ${isDrugDealer ? "" : "not "}a drug dealer.`);
 }
